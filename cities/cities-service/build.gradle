@@ -17,6 +17,7 @@ apply plugin: 'spring-boot'
 
 jar {
     baseName = 'cities-service'
+    version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
