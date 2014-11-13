@@ -1,0 +1,11 @@
+.classpath
+.project
+.settings
+.gradle
+build/
+bin/
+
+.vagrant
+
+# Ignore Gradle GUI config
+gradle-app.setting
