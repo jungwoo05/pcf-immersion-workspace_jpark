@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = "pcf-immersion-box"
-  config.vm.box_url = "https://s3-us-west-2.amazonaws.com/pcf-immersion/pcf-immersion-ubuntu-14.04.1-amd64.box"
+  #config.vm.box_url = "https://s3-us-west-2.amazonaws.com/pcf-immersion/pcf-immersion-ubuntu-14.04.1-amd64.box"
 
   config.vm.provider "virtualbox" do |vb|
      vb.gui = true
