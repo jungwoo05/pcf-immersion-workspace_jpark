@@ -5,3 +5,15 @@
 build
 out
 
+.classpath
+.project
+.settings
+.gradle
+build/
+bin/
+
+.vagrant
+.DS_Store
+
+# Ignore Gradle GUI config
+gradle-app.setting
