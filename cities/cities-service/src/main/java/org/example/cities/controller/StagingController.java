@@ -13,6 +13,6 @@ public class StagingController {
 
 	@RequestMapping("/hello")
 	public String helloWorld() {
-		return "Hello";
+		return "Hello World!";
 	}
 }
