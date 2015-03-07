@@ -8,7 +8,7 @@ public class Metadata {
 	private String displayName = "HaaSh";
 	private String imageUrl = "https://d33na3ni6eqf5j.cloudfront.net/app_resources/18492/thumbs_112/img9069612145282015279.png";
 	private String longDescription = "Natedogg, in the cloud";
-	private String providerDisplayName = "84codes AB";
+	private String providerDisplayName = "21 and Lewis";
 	private String documentationUrl = "http://docs.example.com";
 	private String supportUrl = "http://www.example.com/";
 
