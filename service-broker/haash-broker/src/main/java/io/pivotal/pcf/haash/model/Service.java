@@ -1,70 +1,103 @@
 package io.pivotal.pcf.haash.model;
 
+import java.util.*;
+
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @Entity
 @Table(name = "services")
+@JsonAutoDetect
 public class Service {
 
-    @Id
-    private String id;
+	@Id
+	private String id;
 
-    @Column(nullable = false)
-    private String name;
+	@Column(nullable = false)
+	private String name;
 
-    @Column(nullable = false)
-    private String description;
+	@Column(nullable = false)
+	private String description;
 
-    @Column(nullable = false)
-    private boolean bindable;
+	@Column(nullable = false)
+	private boolean bindable;
 
-    @OneToMany(orphanRemoval = true)
-    @JoinColumn(name = "service_id")
-    private Set<Plan> plans = new HashSet<>();
+	@OneToMany(orphanRemoval = true)
+	@JoinColumn(name = "service_id")
+	private Set<Plan> plans = new HashSet<>();
 
-    public String getId() {
-        return id;
-    }
+	@Transient
+	@JsonSerialize
+	@JsonProperty("dashboard_client")
+	private DashboardClient dashboardClient = new DashboardClient();
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	@Transient
+	@JsonSerialize
+	private List<String> tags = Arrays.asList("the90s");
 
-    public String getName() {
-        return name;
-    }
+	@Transient
+	@JsonSerialize
+	private Metadata metadata = new Metadata();
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getId() {
+		return id;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public boolean isBindable() {
-        return bindable;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setBindable(boolean bindable) {
-        this.bindable = bindable;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public Set<Plan> getPlans() {
-        return plans;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public void setPlans(Set<Plan> plans) {
-        this.plans = plans;
-    }
+	public boolean isBindable() {
+		return bindable;
+	}
 
-    public void addPlan(Plan plan) {
-        this.plans.add(plan);
-    }
+	public void setBindable(boolean bindable) {
+		this.bindable = bindable;
+	}
+
+	public Set<Plan> getPlans() {
+		return plans;
+	}
+
+	public void setPlans(Set<Plan> plans) {
+		this.plans = plans;
+	}
+
+	public void addPlan(Plan plan) {
+		this.plans.add(plan);
+	}
+
+	public DashboardClient getDashboardClient() {
+		return dashboardClient;
+	}
+
+	public void setDashboardClient(DashboardClient dashboardClient) {
+		this.dashboardClient = dashboardClient;
+	}
+
+	public List<String> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<String> tags) {
+		this.tags = tags;
+	}
 }
