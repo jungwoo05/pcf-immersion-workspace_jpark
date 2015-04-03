@@ -1,11 +1,14 @@
 package io.pivotal.pcf.haash.model;
 
-import com.fasterxml.jackson.annotation.*;
+import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonAutoDetect
 public class DashboardClient {
 
-	private final String id = "foo";
+	private final String id = UUID.randomUUID().toString();
 	private final String redirectURI = "http://example.com";
 	private final String secret = "secret";
 
