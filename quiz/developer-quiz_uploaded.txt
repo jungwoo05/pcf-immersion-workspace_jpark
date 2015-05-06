@@ -2,18 +2,20 @@ Developer Quiz
 ---
 
 [D1] Where should your applications write logs?
-
+cloud foundry console (cf logs)
 
 [D2] What command would you run to see the environment variable showing all of your services bound to an application?
-
+cf services
 
 [D3] How would you set the SPRING_PROFILES_ACTIVE environment variable from the command line?
+cf set-env APP_NAME SPRING_PROFILES_ACTIVE ENV_VAR_VALUE
 
 
 [D4] What happens to an application when you scale the amount of memory? Why?
-
+restart app. need to restart app because of assigning additional memory.
 
 [D5] What happens when you scale an application horizontally?
-
+increase app instance, no downtime.
 
 [D6] If you are building a new service broker, what is the best practice when creating a new service instance binding?
+write yml file to bind contents into specific app. 

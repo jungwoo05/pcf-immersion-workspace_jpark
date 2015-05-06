@@ -2,8 +2,16 @@ Overview
 ---
 
 - [O1] What are the 4 Core Tenets of Pivotal CF?
+1.simples, developer friendly commands & API
+2.operational benefits for every application
+3.build-in and ecosystem services
+4.deploy, operate updates, scale platform on any Iaas
 
 - [O2] What are the 4 Levels of HA?
+1.Failed VMs are Recovered
+2.Failed Processes are Recovered
+3.Application Instances Balanced across Availability Zones
+4.Failed Application Instances are Recovered
 
 
 Operations
@@ -12,27 +20,37 @@ Operations
 Installing Pivotal CF on vSphere
 
 - [O3] What is the preferred Network Segmentation strategy?  List each segment and describe the traffic on each.
-
+separate Network Zone(az)
 
 Scaling the Platform
 
 - [O4] What component would you scale to add capacity to host additional application instances?
+instance count, memory, disk
 
 - [O5] Where in Ops Manager would you scale the above component?
-
+Ops Manager -> Pivotal Elastic Runtime -> Resource Config
 
 Backing Up Pivotal CF
 
-- [O6] What critical databases need to be backed up?
+- [O6] What critical databases need to be backed up ?
+Cloud Controller Database
+UAA Database
+Apps Manager Database
+NFS Server
+Pivotal MySQL Server
+
 
 
 Bosh basics & troubleshooting
 
 - [O7] What directory on the Ops Manager VM contains the Ops Manager artifacts and configuration?
+sorry, I don’t know the question meaning.
 
 - [O8] How would you restart Ops Manager?
+I think that it may restart through ops manager director.
 
 - [O9] What bosh component is responsible for recreating a failed VM?
+I think that it’s Health Monitor
 
 - [O10] Where did you enable the above component in Ops Manager?
 
@@ -48,3 +66,5 @@ Bosh basics & troubleshooting
 Application Security Groups
 
 - [O15] What is the name of the default "staging-security-group"?
+SECURITY-GROUP
+
